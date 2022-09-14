@@ -7,28 +7,15 @@ function conferirLetra(letra) {
         index.push(repeat.innerText[i])
         if (index.includes(letra)) {
             alert('letra repetida')
-            if (desenho.children[0].className == 'head') {
-                desenho.children[0].className = 'headNull'
-            } else if (desenho.children[0].className == 'head1') {
-                desenho.children[0].className = 'head'
-            } else if (desenho.children[0].className == 'head2') {
-                desenho.children[0].className = 'head1'
-            } else if (desenho.children[0].className == 'head3') {
-                desenho.children[0].className = 'head2'
-            } else if (desenho.children[0].className == 'head4') {
-                desenho.children[0].className = 'head3'
-            } else if (desenho.children[0].className == 'head5') {
-                desenho.children[0].className = 'head4'
-            } else if (desenho.children[0].className == 'headDie') {
-                desenho.children[0].className = 'head5'
-            }
             return
         }
     }
     repeat.innerText += letra
+    repeats.push[letra]
     return
 }
 
+let repeats = []
 let letras = []
 let letra = ""
 let resposta = document.querySelector('.resposta')
@@ -71,7 +58,7 @@ teclado.addEventListener('click', function (e) {
         }
     }
     if (e.path[0].className == 'tecla') {
-        if (!letras.includes(e.path[0].id)) {
+        if (!letras.includes(e.path[0].id) || repeats.includes(e.path[0].id)) {
             if (desenho.children[0].className == 'headNull') {
                 desenho.children[0].className = 'head'
             } else if (desenho.children[0].className == 'head') {
