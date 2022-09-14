@@ -129,6 +129,6 @@ let data = [
         nome: "PURPURO",
         tipo: "Cor",
         dificuldade: "Difícil",
-        id: 20
+        id: 21
     },
 ]
