@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: darkcyan;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teclado {
+    width: 1000px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 33px;
+    border-radius: 5px;
+    padding: 0 15px;
+    background-color: gray;
+}
+
+.teclado button {
+    width: 70px;
+    height: 40px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.226)0, 0, 0);
+}
+
+.teclado button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+#Z {
+    margin-left: 10px;
+}
+
+.forca {
+    border: 1px solid black;
+    margin-bottom: 3px;
+    height: auto;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    border-radius: 5px;
+    align-items: center;
+    background-color: gray;
+}
+
+.forca .resposta, .repeat {
+    display: inline-block;
+    align-self: flex-end;
+    text-align: center;
+    width: 100%;
+    font-size: 35px;
+    height: 50px;
+}
+
+.desenho {
+    width: 320px;
+    height: 320px;
+    border: 1px solid black;
+    background-repeat: no-repeat;
+}
+
+.headNull {
+    background-image: url(./img/headNull.png);
+    width: 100%;
+    height: 100%;
+}
+
+.head {
+    background-image: url(./img/head.png);
+    width: 100%;
+    height: 100%;
+}
+
+.head1 {
+    background-image: url(./img/head1.png);
+    width: 100%;
+    height: 100%;
+}
+
+.head2 {
+    background-image: url(./img/head2.png);
+    width: 100%;
+    height: 100%;
+}
+
+.head3 {
+    background-image: url(./img/head3.png);
+    width: 100%;
+    height: 100%;
+}
+
+.head4 {
+    background-image: url(./img/head4.png);
+    width: 100%;
+    height: 100%;
+}
+
+.head5 {
+    background-image: url(./img/head5.png);
+    width: 100%;
+    height: 100%;
+}
+
+.headDie {
+    background-image: url(./img/headDie.png);
+    width: 100%;
+    height: 100%;
+}
+
+#par {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.resposta p {
+    display: inline-block;
+}
+
+.forca p {
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.escreverResposta {
+    margin-top: 3px;
+    border: 1px solid darkcyan;
+    padding: 5px;
+    background-color: gray;
+}
+
+.escreverResposta input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
