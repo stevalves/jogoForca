@@ -65,6 +65,10 @@ teclado.addEventListener('click', function (e) {
                 resposta.children[o].innerText = e.path[0].id
             }
         }
+        if (certaResposta() == letra) {
+            alert(`CERTA RESPOSTA!!!`)
+            window.location.reload(true)
+        }
     }
     if (e.path[0].className == 'tecla') {
         if (!letras.includes(e.path[0].id)) {
@@ -96,11 +100,23 @@ tey.addEventListener('click', function (e) {
     if (ta.value == letra) {
         alert(`CERTA RESPOSTA!!!`)
         window.location.reload(true)
-    }else if (ta.value == letra.toLowerCase()) {
+    } else if (ta.value == letra.toLowerCase()) {
         alert(`CERTA RESPOSTA!!!`)
         window.location.reload(true)
-    }else {
+    } else {
         alert(`PERDEU! Resposta certa = ${letra}`)
         window.location.reload(true)
     }
 })
+
+
+console.log(resposta)
+function certaResposta() {
+    let reason = ""
+    for (let p = 0; p < resposta.children.length; p++) {
+        reason += resposta.children[p].innerText
+    }
+    return reason
+}
+
+console.log(certaResposta())
