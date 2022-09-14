@@ -1,6 +1,6 @@
 let teclado = document.querySelector('.teclado')
 let repeat = document.querySelector('.repeat')
-
+let repeats = []
 function conferirLetra(letra) {
     let index = []
     for (let i = 0; i < repeat.innerText.length; i++) {
@@ -11,11 +11,9 @@ function conferirLetra(letra) {
         }
     }
     repeat.innerText += letra
-    repeats.push[letra]
     return
 }
 
-let repeats = []
 let letras = []
 let letra = ""
 let resposta = document.querySelector('.resposta')
@@ -24,20 +22,21 @@ let dificuldade = document.querySelector('.dificuldade')
 function selectData(data) {
     let escolha = Number(Math.random() * (data.length - 0) - 0).toFixed(0)
     for (let j = 0; j < data.length; j++) {
-        if (data[j].id == escolha) {
-            for (let p = 0; p < data[j].nome.length; p++) {
-                let p = document.createElement('p')
-                p.innerText = "_"
-                resposta.appendChild(p)
-                letra = data[j].nome
-                tipo.innerText = data[j].tipo
-                dificuldade.innerText = data[j].dificuldade
+        if (escolha <= data.length) {
+            if (data[j].id == escolha) {
+                for (let p = 0; p < data[j].nome.length; p++) {
+                    let p = document.createElement('p')
+                    p.innerText = "_"
+                    resposta.appendChild(p)
+                    letra = data[j].nome
+                    tipo.innerText = data[j].tipo
+                    dificuldade.innerText = data[j].dificuldade
+                }
             }
         }
     }
 }
 selectData(data)
-console.log(letra)
 let desenho = document.querySelector('.desenho')
 
 for (let o = 0; o < letra.length; o++) {
@@ -58,7 +57,8 @@ teclado.addEventListener('click', function (e) {
         }
     }
     if (e.path[0].className == 'tecla') {
-        if (!letras.includes(e.path[0].id) || repeats.includes(e.path[0].id)) {
+        if (!letras.includes(e.path[0].id) && !repeats.includes(e.path[0].id)) {
+            repeats.push(e.path[0].id)
             if (desenho.children[0].className == 'headNull') {
                 desenho.children[0].className = 'head'
             } else if (desenho.children[0].className == 'head') {
@@ -97,7 +97,7 @@ tey.addEventListener('click', function (e) {
 })
 
 
-console.log(resposta)
+
 function certaResposta() {
     let reason = ""
     for (let p = 0; p < resposta.children.length; p++) {
@@ -105,5 +105,3 @@ function certaResposta() {
     }
     return reason
 }
-
-console.log(certaResposta())
